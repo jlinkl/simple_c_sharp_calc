@@ -11,7 +11,7 @@ namespace Calc
             if (op == "+") {
                 return num1 + num2;
             } else if (op == "-") {
-                return num1 - num2;  
+                return num1 - num2;
             } else if (op == "*") {
                 return num1 * num2;
             } else {
@@ -20,7 +20,7 @@ namespace Calc
         }
 
         public static string chooseOperator() {
-            Console.WriteLine("What operation do you want to do:");
+            Console.WriteLine("What operation do you want to do: +, -, *, or /");
             string op = Console.ReadLine();
             if (op == "+" || op == "-" || op == "*" || op == "/"){
                 return op;
@@ -46,7 +46,12 @@ namespace Calc
 
         public static void Main(string[] args)
         {
-            Console.WriteLine(calculator(chooseNumber(), chooseNumber(), chooseOperator()));
+          int num1 = chooseNumber();
+          int num2 = chooseNumber();
+          string op = chooseOperator();
+          int result = calculator(num1, num2, op);
+
+          Console.WriteLine(num1 + " " + op + " " + num2 + " = " + result);
         }
     }
 }
